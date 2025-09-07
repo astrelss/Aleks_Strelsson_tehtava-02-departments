@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>1990s example</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; font-size: 16px; }
+    .topbar { margin-bottom: 16px; }
+    .topbar a { margin-right: 12px; text-decoration: none; color: #0b5ed7; }
+    .page { max-width: 980px; margin: 0 auto; }
+    h1 { margin: 16px 0; }
+    .error { color: #c00; margin: 8px 0; }
+    table { border-collapse: collapse; width: 100%; margin-top: 12px; }
+    th, td { border: 1px solid #bbb; padding: 10px 12px; text-align: left; }
+    th { background: #f4f6f8; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('get_departments') }}">Departments</a>
+  </div>
+
+  <div class="page">
+    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'departments/layout.html' %}
+{% block content %}
+<h1>New Department</h1>
+
+<form action="{{ url_for('add_department') }}" method="post">
+  <label>Name:&nbsp;</label>
+  <input type="text" name="name" required style="width: 420px;">
+  <button type="submit" class="btn">Submit</button>
+</form>
+{% endblock %}

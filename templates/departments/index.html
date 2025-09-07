@@ -1,0 +1,21 @@
+{% extends 'departments/layout.html' %}
+{% block content %}
+<h1>Departments</h1>
+
+<p><a href="{{ url_for('new_department') }}">New Department</a></p>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Name</th><th>Actions</th></tr>
+  </thead>
+  <tbody>
+    {% for d in departments %}
+      <tr>
+        <td>{{ d[0] }}</td>
+        <td>{{ d[1] }}</td>
+        <td><a href="{{ url_for('delete_department', department_id=d[0]) }}">Delete</a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
